@@ -26,6 +26,8 @@ class Board extends React.Component {
     return <Square value={this.state.squares[i]} onClick{() => this.handleClick(i)} />;
   }
   render() {
+    const winner = calculateWinner(this.state.squares);
+
     const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     return (
       <div>
