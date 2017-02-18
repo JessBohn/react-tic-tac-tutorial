@@ -53,6 +53,14 @@ class Game extends React.Component {
       xIsNext: true
     };
   }
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext,
+    });
+  }
   render() {
     const history = this.state.history;
     const current = history[history.length - 1];
